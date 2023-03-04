@@ -1,17 +1,21 @@
 #! /usr/bin/env make
+# Errors may occur in Windows
 all: html pdf
 
-html:
-	@pandoc -s preamble.txt litReview.txt approach.txt results.txt \
-	conclusion.txt --mathjax -f markdown+tex_math_dollars \
-	-t html -o outcome.html
+html: outcome.md VIEWSMapGridCell.png
+	pandoc -s outcome.md --mathjax -f markdown+tex_math_dollars -t html -o outcome.html
 
-pdf:
-	@pandoc -s preamble.txt litReview.txt approach.txt results.txt \
-	conclusion.txt --mathjax -f markdown+tex_math_dollars \
-	-V geometry:margin=1in \
-	-t pdf -o outcome.pdf
+pdf: outcome.md VIEWSMapGridCell.png
+	pandoc -s outcome.md --mathjax -f markdown+tex_math_dollars -V geometry:margin=1in -t pdf -o outcome.pdf
 
+outcome.md: $(files) new_line
+	cat $(files) > $@
 
+new_line:
+	echo "\n" > new_line.txt
+	
+files = preamble.txt new_line.txt litReview.txt new_line.txt approach.txt new_line.txt results.txt new_line.txt conclusion.txt
 
-
+.PHONY: clean
+clean:
+	-rm -rf outcome.md new_line.txt
