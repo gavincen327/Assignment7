@@ -7,23 +7,23 @@ To clone the repository and replicate the process of making the html report, go 
 
 1. cd "D:\OneDrive - University of Pittsburgh\All Courses\Scientific Computation\ScientificComputationAssignment67-master"
 
-<This is to change the working directory>
+<u>This is to change the working directory</u>
 
 2. git init
 
-<To initialize the repository>
+<u>To initialize the repository</u>
 
 3. git add .
 
-<To add all the files in this folder>
+<u>To add all the files in this folder</u>
 
 4. git status
 
-<View all the files to be staged to the first commit.>
+<u>View all the files to be staged to the first commit.</u>
 
 5. git commit -m "initial commit"
 
-<Adds the change to the local repository>
+<u>Adds the change to the local repository</u>
 
 6. copy url of the remote repository in GitHub: https://github.com/gavincen327/Assignment7.git
 
@@ -31,5 +31,5 @@ To clone the repository and replicate the process of making the html report, go 
 
 8. git push -u origin master
 
-<Push local files to GitHub.In this step, I need to sign in GitHub.Now all the files in the local repository is in the remote repository of GitHub.>
+<u>Push local files to GitHub.In this step, I need to sign in GitHub.Now all the files in the local repository is in the remote repository of GitHub.</u>
 
